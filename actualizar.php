@@ -1,6 +1,5 @@
+<?php require_once "conecta_db.php";?>
 <?php 
-    //conexion a la base de datos
-    $conn = mysqli_connect('localhost', 'root', '', 'tienda_dulces');
     if(isset($_POST['actualizar'])) {
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
