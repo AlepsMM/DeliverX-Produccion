@@ -32,9 +32,6 @@ if (!isset($_SESSION['username'])) {
 <div  class="alert alert-success  fade show" role="alert">Selecciona tu ubicacion.
 </div>
   <?php
-    // Conexión a la base de datos
-    $conn = mysqli_connect('localhost', 'root', '', 'tienda_dulces');
-
     // Obtener el ID del usuario logueado
     $username = $_SESSION['username'];
 
