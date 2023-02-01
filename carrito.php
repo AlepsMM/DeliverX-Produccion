@@ -2,7 +2,6 @@
 <?php
 session_start();
     if(isset($_POST['comprar'])) {
-        echo "<script>if(confirm('¿Estás seguro de realizar la compra?')) {";
         $query = "SELECT * FROM dulces";
         $result = mysqli_query($conn, $query);
         $total = 0;
@@ -26,7 +25,6 @@ session_start();
         $direccion_completa = implode(',', $direccion);
         $query = "INSERT INTO compras_productos (direccion, username, detalle, total, fecha) VALUES ('$direccion_completa', '$username', '$detalle_compra', '$total', now())";
         mysqli_query($conn, $query);
-        echo "alert('Compra realizada con éxito. Total: $" . $total . "');window.location.href='order.php';}";
-        echo "else {window.location.href='index.php';}</script>";
+        echo "<script>alert('Compra realizada con éxito. Total: $" . $total . "');window.location.href='order.php';</script>";
     }
 ?>
